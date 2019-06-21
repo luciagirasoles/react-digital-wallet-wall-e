@@ -1,12 +1,10 @@
 import React from "react";
 import BalanceItem from "./balance-item";
 
-function Balance({ month, categories }) {
-  let children;
-  for (let categoryId of categories) {
-    children += (
-      <BalanceItem key={categoryId} category={categories[categoryId]} />
-    );
+function Balance({ month, list }) {
+  let children = [];
+  for (let categoryId in list) {
+    children.push(<BalanceItem key={categoryId} category={list[categoryId]} />);
   }
   return (
     <div>

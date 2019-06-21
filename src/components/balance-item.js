@@ -10,8 +10,10 @@ function BalanceItem({ category }) {
   };
   return (
     <section css={sectionStyle}>
-      <span>{category["name"]}</span>
+      <span>Category {category["name"]} =></span>
       <span>{category["value"]}</span>
     </section>
   );
 }
+
+export default BalanceItem;
