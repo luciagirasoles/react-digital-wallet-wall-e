@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   transaction: {
     1: {
       id: 1,
