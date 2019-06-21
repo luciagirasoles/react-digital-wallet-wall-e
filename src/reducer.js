@@ -2,7 +2,7 @@ const initialState = {
   transaction: {
     1: {
       id: 1,
-      type: "ingreesse",
+      type: "ingresse",
       amount: 12.12,
       date: new Date().toISOString(),
       categoryId: 1
@@ -18,32 +18,32 @@ const initialState = {
   categories: {
     1: {
       id: 1,
-      type: "ingreesse",
+      type: "ingresse",
       name: "Award"
     },
     2: {
       id: 2,
-      type: "ingreesse",
+      type: "ingresse",
       name: "Gifts"
     },
     3: {
       id: 3,
-      type: "ingreese",
+      type: "ingresse",
       name: "Interest money"
     },
     4: {
       id: 4,
-      type: "ingreese",
+      type: "ingresse",
       name: "Salary"
     },
     5: {
       id: 5,
-      type: "ingreese",
+      type: "ingresse",
       name: "Selling"
     },
     6: {
       id: 6,
-      type: "ingreese",
+      type: "ingresse",
       name: "Others"
     },
     7: {
@@ -76,13 +76,13 @@ const initialState = {
       type: "withdraw",
       name: "Entertainment"
     },
-    12: {
-      id: 12,
+    13: {
+      id: 13,
       type: "withdraw",
       name: "Friends & lover"
     },
-    13: {
-      id: 13,
+    14: {
+      id: 14,
       type: "withdraw",
       name: "Transportation"
     }
@@ -93,7 +93,11 @@ function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case "ADD_TRANSACTION": {
       return {
-        state
+        ...state,
+        transaction: {
+          ...state.transaction,
+          [action.payload.id]: action.payload
+        }
       };
     }
 
