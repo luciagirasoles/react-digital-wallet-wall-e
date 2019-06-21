@@ -8,7 +8,7 @@ export const initialState = {
       categoryId: 1
     },
     2: {
-      id: 1,
+      id: 2,
       type: "withdraw",
       amount: 12.12,
       date: new Date().toISOString(),
