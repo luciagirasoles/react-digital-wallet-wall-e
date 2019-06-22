@@ -2,7 +2,7 @@
 
 exports[`New component 1`] = `
 <DocumentFragment>
-  .emotion-10 {
+  .emotion-11 {
   background: white;
   border-radius: .5em;
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,.12);
@@ -66,23 +66,39 @@ exports[`New component 1`] = `
   border-color: #00c852;
 }
 
-.emotion-6 {
+.emotion-7 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
 @media (max-width:460px) {
-  .emotion-6 {
+  .emotion-7 {
     width: 100%;
   }
 }
 
-.emotion-9 {
+.emotion-6 {
+  background: none;
+  border: 1px solid #eaeaea;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  padding: .5rem;
+  width: 100%;
+}
+
+.emotion-6:focus {
+  outline: none;
+  border-color: #00c852;
+}
+
+.emotion-10 {
   margin: 2rem 0;
 }
 
-.emotion-8 {
+.emotion-9 {
   background-color: #00c852;
   border: 1px solid #00c852;
   border-radius: .25rem;
@@ -97,21 +113,19 @@ exports[`New component 1`] = `
   width: 100%;
 }
 
-.emotion-8:hover {
+.emotion-9:hover {
   background-color: white;
   color: #00c852;
 }
 
 <div
-    class="emotion-10"
+    class="emotion-11"
   >
     <form>
       <div>
-        <h4
-          id="demo"
-        >
-          Basic, Fixed List Combobox
-        </h4>
+        <h1>
+          New transaction
+        </h1>
       </div>
       <div
         class="emotion-1"
@@ -172,7 +186,7 @@ exports[`New component 1`] = `
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-owns="listbox:1"
-          class="emotion-6"
+          class="emotion-7"
           data-reach-combobox=""
           role="combobox"
         >
@@ -180,6 +194,7 @@ exports[`New component 1`] = `
             aria-autocomplete="both"
             aria-label="Select a category"
             autocomplete="off"
+            class="emotion-6"
             data-reach-combobox-input=""
             id="listbox:1"
             placeholder="Select a category"
@@ -188,10 +203,10 @@ exports[`New component 1`] = `
         </div>
       </div>
       <div
-        class="emotion-9"
+        class="emotion-10"
       >
         <button
-          class="emotion-8"
+          class="emotion-9"
           type="submit"
         >
           Save
