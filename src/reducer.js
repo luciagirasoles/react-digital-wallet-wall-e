@@ -19,72 +19,86 @@ export const initialState = {
     1: {
       id: 1,
       type: "ingresse",
-      name: "Award"
+      name: "Award",
+      image: "/images/Award.png"
     },
     2: {
       id: 2,
       type: "ingresse",
-      name: "Gifts"
+      name: "Gifts",
+      image: "/images/Gifts.png"
     },
     3: {
       id: 3,
       type: "ingresse",
-      name: "Interest money"
+      name: "Interest money",
+      image: "/images/Interest money.png"
     },
     4: {
       id: 4,
       type: "ingresse",
-      name: "Salary"
+      name: "Salary",
+      image: "/images/Salary.png"
     },
     5: {
       id: 5,
       type: "ingresse",
-      name: "Selling"
+      name: "Selling",
+      image: "/images/Selling.png"
     },
     6: {
       id: 6,
       type: "ingresse",
-      name: "Others"
+      name: "Others",
+      image: "/images/Others.png"
     },
     7: {
       id: 7,
       type: "withdraw",
-      name: "Bills & utilities"
+      name: "Bills & utilities",
+      image: "/images/Bills & utilities.png"
     },
     8: {
       id: 8,
       type: "withdraw",
-      name: "Healt & fitness"
+      name: "Healt & fitness",
+      image: "/images/Healt & fitness.png"
     },
     9: {
       id: 9,
       type: "withdraw",
-      name: "Shopping"
+      name: "Shopping",
+      image: "/images/Shopping.png"
     },
     10: {
       id: 10,
       type: "withdraw",
-      name: "Business"
+      name: "Business",
+      image: "/images/Business.png"
     },
     11: {
       id: 11,
       type: "withdraw",
-      name: "Education"
+      name: "Education",
+      image: "/images/Education.png"
     },
     12: {
       id: 12,
       type: "withdraw",
-      name: "Entertainment"
+      name: "Entertainment",
+      image: "/images/Entertainment.png"
     },
     13: {
       id: 13,
       type: "withdraw",
-      name: "Friends & lover"
+      name: "Friends & lover",
+      image: "/images/Friends & lover.png"
     },
     14: {
       id: 14,
       type: "withdraw",
-      name: "Transportation"
+      name: "Transportation",
+      image: "/images/Transportation.png"
     }
   }
 };
