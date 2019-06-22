@@ -1,6 +1,21 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
+const inputStyles = {
+  background: "none",
+  border: "1px solid #eaeaea",
+  borderRadius: ".25rem",
+  boxSizing: "border-box",
+  display: "block",
+  fontSize: "1rem",
+  padding: ".5rem",
+  width: "100%",
+  "&:focus": {
+    outline: "none",
+    borderColor: "#00c852"
+  }
+};
+
 function Button({ styles, ...props }) {
   return (
     <button
@@ -153,4 +168,4 @@ function Select({ styles = {}, children, ...props }) {
   );
 }
 
-export { Button, Card, Input, Select };
+export { Button, Card, Input, Select, inputStyles };

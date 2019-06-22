@@ -3,7 +3,15 @@ import { jsx } from "@emotion/core";
 import React from "react";
 import { connect } from "react-redux";
 import { navigate } from "@reach/router";
-import { Input, Card, Select, Button } from "../components/ui";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+  ComboboxOptionText
+} from "@reach/combobox";
+import { Input, Card, Button, inputStyles } from "../components/ui";
 import { addTransaction } from "../actions";
 
 export function New({ categories, createTransaction }) {
@@ -19,16 +27,19 @@ export function New({ categories, createTransaction }) {
     setAmount(parseFloat(event.target.value));
   }
 
-  function handleCategoryChange(event) {
-    setCategory(parseInt(event.target.value));
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
+    const findCategorie = categories.find(
+      categorie => categorie.name === category
+    );
+    if (!findCategorie) {
+      alert("Select a valid category");
+      return;
+    }
     createTransaction({
       type,
       amount,
-      categoryId: category
+      categoryId: findCategorie.id
     });
     navigate("/");
   }
@@ -61,6 +72,9 @@ export function New({ categories, createTransaction }) {
       }}
     >
       <form onSubmit={handleSubmit}>
+        <div>
+          <h1>New transaction</h1>
+        </div>
         <div css={styleField}>
           <label css={styleLabel}>Type: </label>
           <label>
@@ -103,31 +117,69 @@ export function New({ categories, createTransaction }) {
           <label htmlFor="filter" css={styleLabel}>
             Select Category:
           </label>
-          <Select
-            styles={{
-              container: {
-                flex: "1",
-                "@media (max-width: 460px)": {
-                  width: "100%"
-                }
+          <Combobox
+            onSelect={item => setCategory(item)}
+            css={{
+              flex: "1",
+              "@media (max-width: 460px)": {
+                width: "100%"
               }
             }}
-            id="filter"
-            name="filter"
-            aria-label="Select a filter"
-            onChange={handleCategoryChange}
-            value={category}
-            required
           >
-            <option value="">-- Select a category --</option>
-            {categories
-              .filter(categorie => categorie.type === type)
-              .map(categorie => (
-                <option value={categorie.id} key={categorie.id}>
-                  {categorie.name}
-                </option>
-              ))}
-          </Select>
+            <ComboboxInput
+              aria-label="Select a category"
+              autoComplete="off"
+              placeholder="Select a category"
+              onChange={event => setCategory(event.target.value)}
+              value={category}
+              css={inputStyles}
+            />
+            <ComboboxPopover
+              css={{ background: "#fff", border: "1px solid #ddd" }}
+            >
+              <ComboboxList
+                aria-labelledby="demo"
+                css={{
+                  paddingLeft: "0px",
+                  listStyle: "none",
+                  "li[data-highlighted]": {
+                    background: "#ddd"
+                  }
+                }}
+              >
+                {categories
+                  .filter(categorie => categorie.type === type)
+                  .map(categorie => (
+                    <ComboboxOption
+                      value={categorie.name}
+                      key={categorie.id}
+                      css={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginTop: "3px",
+                        padding: "5px",
+                        transition: "all .3s",
+                        cursor: "pointer",
+                        ":hover": {
+                          background: "#ddd"
+                        }
+                      }}
+                    >
+                      <img
+                        css={{
+                          width: "30px",
+                          height: "30px",
+                          marginRight: "7.5px"
+                        }}
+                        src={categorie.image}
+                        alt={categorie.name}
+                      />
+                      <ComboboxOptionText />
+                    </ComboboxOption>
+                  ))}
+              </ComboboxList>
+            </ComboboxPopover>
+          </Combobox>
         </div>
         <div
           css={{
@@ -143,8 +195,7 @@ export function New({ categories, createTransaction }) {
 
 function mapState(state) {
   return {
-    categories: Object.values(state.categories),
-    data: "space"
+    categories: Object.values(state.categories)
   };
 }
 
