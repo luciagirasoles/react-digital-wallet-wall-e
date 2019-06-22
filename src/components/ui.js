@@ -59,6 +59,27 @@ function Card({ styles, ...props }) {
   );
 }
 
+function HeaderButton({ styles, ...props }) {
+  return (
+    <div
+      {...props}
+      css={{
+        padding: "16px 0",
+        margin: "0 16px",
+        position: "relative",
+        transition: "all 0.25s",
+        borderBottom: "1px solid #e6e6e6",
+        cursor: "pointer",
+        "&:hover": {
+          h4: {
+            color: "#00c852"
+          }
+        }
+      }}
+    />
+  );
+}
+
 function Input({ styles, ...props }) {
   return (
     <input
@@ -168,4 +189,4 @@ function Select({ styles = {}, children, ...props }) {
   );
 }
 
-export { Button, Card, Input, Select, inputStyles };
+export { Button, Card, Input, Select, inputStyles, HeaderButton };
