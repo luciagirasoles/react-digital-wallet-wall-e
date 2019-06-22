@@ -6,8 +6,8 @@ function Button({ styles, ...props }) {
     <button
       {...props}
       css={{
-        backgroundColor: "black",
-        border: "1px solid black",
+        backgroundColor: "#00c852",
+        border: "1px solid #00c852",
         borderRadius: ".25rem",
         color: "white",
         cursor: "pointer",
@@ -19,7 +19,7 @@ function Button({ styles, ...props }) {
         width: "100%",
         "&:hover": {
           backgroundColor: "white",
-          color: "black"
+          color: "#00c852"
         },
         ...styles
       }}
@@ -59,7 +59,7 @@ function Input({ styles, ...props }) {
         width: "100%",
         "&:focus": {
           outline: "none",
-          borderColor: "#444444"
+          borderColor: "#00c852"
         },
         ...styles
       }}
