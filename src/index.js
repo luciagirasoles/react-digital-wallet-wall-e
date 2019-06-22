@@ -27,7 +27,8 @@ function App() {
       <main
         css={{
           maxWidth: "1000px",
-          margin: "auto"
+          margin: "auto",
+          padding: "0 1em"
         }}
       >
         <Router>
@@ -41,6 +42,7 @@ function App() {
 }
 
 const $root = document.getElementById("root");
+
 render(
   <Provider store={store}>
     <App />

@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`New component 1`] = `
+<DocumentFragment>
+  .emotion-10 {
+  background: white;
+  border-radius: .5em;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,.12);
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+  margin: auto;
+  max-width: 500px;
+}
+
+.emotion-1 {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width:460px) {
+  .emotion-1 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: initial;
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+    margin: 1rem 0;
+  }
+}
+
+.emotion-0 {
+  margin-right: 1em;
+  min-width: 115px;
+}
+
+@media (max-width:460px) {
+  .emotion-0 {
+    display: block;
+    margin: 1rem 0;
+  }
+}
+
+.emotion-3 {
+  background: none;
+  border: 1px solid #eaeaea;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  padding: .5rem;
+  width: 100%;
+}
+
+.emotion-3:focus {
+  outline: none;
+  border-color: #00c852;
+}
+
+.emotion-6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@media (max-width:460px) {
+  .emotion-6 {
+    width: 100%;
+  }
+}
+
+.emotion-9 {
+  margin: 2rem 0;
+}
+
+.emotion-8 {
+  background-color: #00c852;
+  border: 1px solid #00c852;
+  border-radius: .25rem;
+  color: white;
+  cursor: pointer;
+  font-size: .8rem;
+  padding: .75rem 0;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.emotion-8:hover {
+  background-color: white;
+  color: #00c852;
+}
+
+<div
+    class="emotion-10"
+  >
+    <form>
+      <div>
+        <h4
+          id="demo"
+        >
+          Basic, Fixed List Combobox
+        </h4>
+      </div>
+      <div
+        class="emotion-1"
+      >
+        <label
+          class="emotion-0"
+        >
+          Type: 
+        </label>
+        <label>
+          <input
+            checked=""
+            name="ingresse"
+            type="radio"
+            value="ingresse"
+          />
+          Ingresse
+        </label>
+        <label>
+          <input
+            name="withdraw"
+            type="radio"
+            value="withdraw"
+          />
+          Withdraw
+        </label>
+      </div>
+      <div
+        class="emotion-1"
+      >
+        <label
+          class="emotion-0"
+          for="amount"
+        >
+          Amout: 
+        </label>
+        <input
+          aria-label="Write the amount"
+          class="emotion-3"
+          id="amount"
+          name="amount"
+          placeholder="1.00"
+          required=""
+          type="number"
+          value=""
+        />
+      </div>
+      <div
+        class="emotion-1"
+      >
+        <label
+          class="emotion-0"
+          for="filter"
+        >
+          Select Category:
+        </label>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="listbox:1"
+          class="emotion-6"
+          data-reach-combobox=""
+          role="combobox"
+        >
+          <input
+            aria-autocomplete="both"
+            aria-label="Select a category"
+            autocomplete="off"
+            data-reach-combobox-input=""
+            id="listbox:1"
+            placeholder="Select a category"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="emotion-9"
+      >
+        <button
+          class="emotion-8"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
