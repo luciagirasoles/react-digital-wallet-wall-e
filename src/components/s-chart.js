@@ -3,7 +3,7 @@ import Chart from "chart.js";
 import ChartPluginLabels from "chartjs-plugin-labels";
 import { connect } from "react-redux";
 
-function ShowChart({ categories, transaction }) {
+export function ShowChart({ categories, transaction }) {
   const container = {
     width: "30vw",
     height: "30vh",
@@ -17,7 +17,8 @@ function ShowChart({ categories, transaction }) {
     value => new Date(value.date).getMonth() === currentMonth
   );
 
-  const chartRef = useRef(null);
+  const chartRefIngresse = useRef(null);
+  const chartRefWithdraw = useRef(null);
   useEffect(() => {
     let amountPerCategory = { ingresse: {}, withdraw: {} };
     let amount = 0;
@@ -34,45 +35,54 @@ function ShowChart({ categories, transaction }) {
       month: "long"
     });
 
-    const myChartRef = chartRef.current.getContext("2d");
-    new Chart(myChartRef, {
-      type: "doughnut",
-      data: {
-        labels: Object.keys(amountPerCategory.withdraw),
-        datasets: [
-          {
-            label: "Withdraw",
-            data: Object.values(amountPerCategory.withdraw),
-            backgroundColor: [
-              "#64c955",
-              "#4cc0c0",
-              "#f1e05b",
-              "#f16083",
-              "#4c6bc1",
-              "purple",
-              "skyblue",
-              "pink"
-            ]
-          }
-        ]
-      },
-      options: {
-        title: {
-          display: true,
-          text: `Withdraw ${currentMonthString}`
+    const chart = type => {
+      return {
+        type: "doughnut",
+        data: {
+          labels: Object.keys(amountPerCategory[type]),
+          datasets: [
+            {
+              label: "Withdraw",
+              data: Object.values(amountPerCategory[type]),
+              backgroundColor: [
+                "#64c955",
+                "#4cc0c0",
+                "#f1e05b",
+                "#f16083",
+                "#4c6bc1",
+                "purple",
+                "skyblue",
+                "pink"
+              ]
+            }
+          ]
         },
-        plugins: {
-          labels: {
-            render: "percentage",
-            precision: 2
+        options: {
+          title: {
+            display: true,
+            text: `Withdraw ${currentMonthString}`
+          },
+          plugins: {
+            labels: {
+              render: "percentage",
+              precision: 2
+            }
           }
         }
-      }
-    });
+      };
+    };
+
+    const myChartRefIngresse = chartRefIngresse.current.getContext("2d");
+    new Chart(myChartRefIngresse, chart("ingresse"));
+
+    const myChartRefWithdraw = chartRefWithdraw.current.getContext("2d");
+    new Chart(myChartRefWithdraw, chart("withdraw"));
   }, [categories, transactionsCurrentMonth]);
+
   return (
     <div css={container}>
-      <canvas id="myChart" ref={chartRef} />
+      <canvas id="CanvasIngresse" ref={chartRefIngresse} />
+      <canvas id="CanvasWithdraw" ref={chartRefWithdraw} />
     </div>
   );
 }
