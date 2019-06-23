@@ -39,15 +39,6 @@ exports[`balance-item component 1`] = `
   justify-content: space-around;
 }
 
-.emotion-0 {
-  margin-left: 5px;
-  font-size: 1.05em;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-}
-
 <section
     class="emotion-1"
   >
