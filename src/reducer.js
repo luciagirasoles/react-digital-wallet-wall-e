@@ -41,6 +41,34 @@ export const initialState = {
       amount: 1.8,
       date: Date.now() - 8786766,
       categoryId: 1
+    },
+    3: {
+      id: 3,
+      type: "withdraw",
+      amount: 10,
+      date: "Fri Jun 22 2019",
+      categoryId: 7
+    },
+    4: {
+      id: 4,
+      type: "withdraw",
+      amount: 24,
+      date: "Fri Jun 22 2019",
+      categoryId: 7
+    },
+    5: {
+      id: 5,
+      type: "ingreesse",
+      amount: 44,
+      date: "Fri May 23 2019",
+      categoryId: 6
+    },
+    6: {
+      id: 6,
+      type: "ingreesse",
+      amount: 100,
+      date: "Fri Jun 10 2019",
+      categoryId: 4
     }
   },
   categories: {
