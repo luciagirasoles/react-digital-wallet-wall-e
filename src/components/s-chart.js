@@ -42,7 +42,7 @@ export function ShowChart({ categories, transaction }) {
           labels: Object.keys(amountPerCategory[type]),
           datasets: [
             {
-              label: "Withdraw",
+              label: `${type}`,
               data: Object.values(amountPerCategory[type]),
               backgroundColor: [
                 "#64c955",
@@ -60,7 +60,8 @@ export function ShowChart({ categories, transaction }) {
         options: {
           title: {
             display: true,
-            text: `Withdraw ${currentMonthString}`
+            text: `${type.charAt(0).toUpperCase() +
+              type.slice(1)} ${currentMonthString}`
           },
           plugins: {
             labels: {
