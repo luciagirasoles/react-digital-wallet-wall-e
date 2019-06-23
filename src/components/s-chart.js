@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js";
+import ChartPluginLabels from "chartjs-plugin-labels";
 import { connect } from "react-redux";
 
 function ShowChart({ categories, transaction }) {
@@ -59,6 +60,12 @@ function ShowChart({ categories, transaction }) {
         title: {
           display: true,
           text: `Withdraw ${currentMonthString}`
+        },
+        plugins: {
+          labels: {
+            render: "percentage",
+            precision: 2
+          }
         }
       }
     });
