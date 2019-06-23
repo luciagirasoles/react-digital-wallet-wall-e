@@ -12,18 +12,18 @@ export const initialState = {
       type: "withdraw",
       amount: 12.12,
       date: Date.now() - 5593867349,
-      categoryId: 1
+      categoryId: 9
     },
     3: {
       id: 1,
-      type: "ingreesse",
+      type: "ingresse",
       amount: 12.12,
       date: Date.now() - 4593867349,
       categoryId: 1
     },
     4: {
       id: 2,
-      type: "ingreesse",
+      type: "ingresse",
       amount: 34,
       date: Date.now() - 567667472,
       categoryId: 1
@@ -33,41 +33,41 @@ export const initialState = {
       type: "withdraw",
       amount: 8,
       date: Date.now() - 234565234,
-      categoryId: 3
+      categoryId: 7
     },
     6: {
       id: 4,
-      type: "ingreesse",
+      type: "ingresse",
       amount: 1.8,
       date: Date.now() - 8786766,
       categoryId: 1
     },
-    3: {
-      id: 3,
+    7: {
+      id: 7,
       type: "withdraw",
       amount: 10,
-      date: "Fri Jun 22 2019",
+      date: Date.now() - 8786766,
       categoryId: 7
     },
-    4: {
-      id: 4,
+    8: {
+      id: 8,
       type: "withdraw",
       amount: 24,
-      date: "Fri Jun 22 2019",
+      date: Date.now() - 7786165,
       categoryId: 7
     },
-    5: {
-      id: 5,
-      type: "ingreesse",
+    9: {
+      id: 9,
+      type: "ingresse",
       amount: 44,
-      date: "Fri May 23 2019",
+      date: Date.now() - 7786666,
       categoryId: 6
     },
-    6: {
-      id: 6,
-      type: "ingreesse",
+    10: {
+      id: 10,
+      type: "ingresse",
       amount: 100,
-      date: "Fri Jun 10 2019",
+      date: Date.now() - 7786166,
       categoryId: 4
     }
   },
