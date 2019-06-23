@@ -34,7 +34,8 @@ export function ReportBody({ type, transaction, categories }) {
         ...balance,
         [category]: {
           name: category,
-          value: amount + row.amount
+          value: amount + row.amount,
+          image: categories[row.categoryId].image
         }
       };
     }
