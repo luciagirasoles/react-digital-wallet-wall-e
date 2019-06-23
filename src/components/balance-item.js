@@ -7,20 +7,25 @@ function BalanceItem({ category }) {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    width: 300
+    width: 300,
+    margin: "2em 0"
   };
   return (
     <section css={sectionStyle}>
       <img src={category["image"]} alt={category["name"]} />
       <div
         css={{
-          marginLeft: "5px",
+          display: "flex",
+          flexDirection: "column",
+          marginLeft: "15px",
           fontSize: "1.05em",
-          letterSpacing: "1px"
+          letterSpacing: "1px",
+          height: 64,
+          justifyContent: "space-around"
         }}
       >
-        <span>Category {category["name"]} =></span>
-        <span>{category["value"]}</span>
+        <span>{category["name"]} Category</span>
+        <span>$ {category["value"]}</span>
       </div>
     </section>
   );

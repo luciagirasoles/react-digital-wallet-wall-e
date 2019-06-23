@@ -51,7 +51,7 @@ function Card({ styles, ...props }) {
         borderRadius: ".5em",
         boxShadow: "0px 2px 5px 0px rgba(0, 0, 0, .12)",
         boxSizing: "border-box",
-        padding: "2rem",
+        padding: "1rem",
         width: "100%",
         ...styles
       }}
