@@ -129,7 +129,7 @@ function Status({ totals, topCategories }) {
                   <FaCaretDown css={{ ...cssFaCarets, color: "red" }} />
                 </li>
                 <li css={cssMonthResumeItem}>
-                  <span>$ {totals.totalIngreesse}</span>
+                  <span>$ {totals.totalIngresse}</span>
                   <FaCaretUp css={{ ...cssFaCarets, color: colorGreen }} />
                 </li>
               </ul>
@@ -224,13 +224,13 @@ function mapState(state) {
   const arrTransactions = Object.values(state.transaction);
   const categories = state.categories;
   let total = 0;
-  let totalIngreesse = 0;
+  let totalIngresse = 0;
   let totalWithdraw = 0;
   const currentMonth = new Date().getMonth();
 
   total = arrTransactions.reduce((accu, current) => {
     if (current.type === "ingresse") {
-      totalIngreesse += current.amount;
+      totalIngresse += current.amount;
       return accu + current.amount;
     }
     totalWithdraw += current.amount;
@@ -279,7 +279,7 @@ function mapState(state) {
   );
 
   return {
-    totals: { total, totalIngreesse, totalWithdraw },
+    totals: { total, totalIngresse, totalWithdraw },
     /* topCategories contains:
       ingresse: { name: "categoryName", amount: 0, image: "" },
       withdraw: { name: "categoryName", amount: 0, image: "" }

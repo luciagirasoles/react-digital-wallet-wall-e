@@ -51,12 +51,12 @@ function ReportCategory() {
             }
           }}
         >
-          <Tab css={buttonStyle}>Ingreesse</Tab>
+          <Tab css={buttonStyle}>Ingresse</Tab>
           <Tab css={buttonStyle}>Withdraw</Tab>
         </TabList>
         <TabPanels css={{ paddingBottom: 5 }}>
           <TabPanel>
-            <ReportBody key={1} type={"ingreesse"} />
+            <ReportBody key={1} type={"ingresse"} />
           </TabPanel>
           <TabPanel>
             <ReportBody key={2} type={"withdraw"} />
