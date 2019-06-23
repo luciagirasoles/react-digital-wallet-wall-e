@@ -2,16 +2,19 @@
 import React, { useState } from "react";
 import { jsx } from "@emotion/core";
 import { Tabs, TabList, Tab, TabPanel, TabPanels } from "@reach/tabs";
+import { Card } from "./../components/ui";
 
 import ReportBody from "../components/report-body";
 
 function ReportCategory() {
   const [tabIndex, setTabIndex] = useState(0);
 
+  const colors = ["#00c852", "red"];
+  const backgroundColor = colors[tabIndex];
+
   const buttonStyle = {
-    border: "1px solid transparent",
+    border: `1px solid transparent`,
     outline: "none",
-    background: "transparent",
     borderRadius: "4px 4px 0 0",
     marginBottom: "-1px",
     padding: ".75em 1.25em",
@@ -20,7 +23,14 @@ function ReportCategory() {
   };
 
   return (
-    <>
+    <Card
+      styles={{
+        maxWidth: "520px",
+        margin: "auto",
+        position: "relative",
+        backgroundColor: "#efefef"
+      }}
+    >
       <h1
         css={{
           fontSize: "30px",
@@ -28,23 +38,23 @@ function ReportCategory() {
           letterSpacing: "1px"
         }}
       >
-        Report Category
+        Monthly Report
       </h1>
       <Tabs onChange={index => setTabIndex(index)}>
         <TabList
           css={{
-            borderBottom: "1px solid rgba(0, 200, 82, 0.5)",
+            borderBottom: `1px solid ${backgroundColor}`,
             '[aria-selected="true"]': {
-              backgroundColor: "#fff",
-              borderColor: "rgba(0, 200, 82, 0.5)",
-              borderBottomColor: "transparent!important"
+              backgroundColor: backgroundColor,
+              borderColor: backgroundColor,
+              borderBottomColor: `${backgroundColor}!important`
             }
           }}
         >
           <Tab css={buttonStyle}>Ingreesse</Tab>
           <Tab css={buttonStyle}>Withdraw</Tab>
         </TabList>
-        <TabPanels>
+        <TabPanels css={{ paddingBottom: 5 }}>
           <TabPanel>
             <ReportBody key={1} type={"ingreesse"} />
           </TabPanel>
@@ -53,7 +63,7 @@ function ReportCategory() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </>
+    </Card>
   );
 }
 

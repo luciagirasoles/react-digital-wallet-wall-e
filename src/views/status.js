@@ -1,14 +1,10 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
 import React from "react";
+import { jsx } from "@emotion/core";
 import { connect } from "react-redux";
 import { Link } from "@reach/router";
-import { Card, Button } from "./../components/ui";
-import { HeaderButton } from "./../components/ui";
-import { FaChevronRight } from "react-icons/fa";
-import { FaCaretDown } from "react-icons/fa";
-import { FaCaretUp } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa";
+import { Card, Button, HeaderButton } from "./../components/ui";
+import { FaChevronRight, FaCaretDown, FaCaretUp, FaPlus } from "react-icons/fa";
 
 function Status({ totals, topCategories }) {
   const currentMonth = new Date().toLocaleString("en-US", { month: "long" });
@@ -176,7 +172,7 @@ function Status({ totals, topCategories }) {
                   />
                   <span>{topCategories.withdraw.name}</span>
                   <span css={cssPriceCategories}>
-                    $ {topCategories.withdraw.amount}
+                    $ {topCategories.withdraw.amount}{" "}
                     <FaCaretDown css={{ color: "red" }} />
                   </span>
                 </li>
