@@ -213,6 +213,7 @@ function Status({ totals, topCategories }) {
             margin: "auto"
           }}
           to="/new"
+          aria-label="Add new transaction"
         >
           <FaPlus />
         </Link>
