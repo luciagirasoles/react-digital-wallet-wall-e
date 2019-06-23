@@ -9,6 +9,7 @@ import New from "./views/new";
 import ReportCategory from "./views/report-category";
 import Status from "./views/status";
 import Navbar from "./components/navbar";
+import ShowChart from "./components/s-chart";
 import store from "./store";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Status path="/" />
           <New path="/new" />
           <ReportCategory path="/report-category" />
+          <ShowChart path="/report-chart" />
         </Router>
       </main>
     </>

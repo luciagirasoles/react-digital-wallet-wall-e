@@ -11,6 +11,7 @@ import { FaCaretUp } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 
 function Status({ totals, topCategories }) {
+  const currentMonth = new Date().toLocaleString("en-US", { month: "long" });
   const colorGreen = "#00c852";
 
   const cssHeader = {
@@ -124,7 +125,7 @@ function Status({ totals, topCategories }) {
             </HeaderButton>
             <div css={{ padding: "24px 0" }}>
               <h3 css={cssCurrentMonth}>
-                <time css={cssCurrentTime}>JUNE</time>
+                <time css={cssCurrentTime}>{currentMonth.toUpperCase()}</time>
               </h3>
               <ul css={cssMonthResumeList}>
                 <li css={cssMonthResumeItem}>
@@ -171,6 +172,7 @@ function Status({ totals, topCategories }) {
                     css={cssImgCategory}
                     src={topCategories.withdraw.image}
                     width="20"
+                    alt="Icon of category"
                   />
                   <span>{topCategories.withdraw.name}</span>
                   <span css={cssPriceCategories}>
@@ -183,6 +185,7 @@ function Status({ totals, topCategories }) {
                     css={cssImgCategory}
                     src={topCategories.ingresse.image}
                     width="20"
+                    alt="Icon of category"
                   />
                   <span>{topCategories.ingresse.name}</span>
                   <span css={cssPriceCategories}>
@@ -239,7 +242,7 @@ function mapState(state) {
   }, 0);
 
   const categoriesIdOfThisMonthWithAmount = arrTransactions
-    .filter(trans => new Date(trans.date).getMonth() == currentMonth)
+    .filter(trans => new Date(trans.date).getMonth() === currentMonth)
     .reduce((ac, el) => {
       const key = el.categoryId;
       const value = el.amount;
