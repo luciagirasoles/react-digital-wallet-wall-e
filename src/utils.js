@@ -2,7 +2,8 @@ import { initialState } from "./reducer";
 
 export const loadState = () => {
   try {
-    const serializedState = JSON.parse(localStorage.getItem("state"));
+    const serializedState =
+      JSON.parse(localStorage.getItem("state")) || initialState;
     if (serializedState === null || Object.keys(serializedState).length === 0) {
       return initialState;
     }
