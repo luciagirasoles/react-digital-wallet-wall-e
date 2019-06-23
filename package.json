@@ -6,6 +6,7 @@
     "@emotion/core": "^10.0.10",
     "@reach/combobox": "^0.1.1",
     "@reach/router": "^1.2.1",
+    "@reach/tabs": "^0.1.6",
     "@testing-library/react": "^8.0.1",
     "jest-emotion": "^10.0.11",
     "react": "^16.8.6",

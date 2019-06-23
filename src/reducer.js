@@ -4,14 +4,42 @@ export const initialState = {
       id: 1,
       type: "ingresse",
       amount: 12.12,
-      date: new Date().toISOString(),
+      date: Date.now() - 7593867349,
       categoryId: 1
     },
     2: {
-      id: 1,
+      id: 2,
       type: "withdraw",
       amount: 12.12,
-      date: new Date().toISOString(),
+      date: Date.now() - 5593867349,
+      categoryId: 1
+    },
+    3: {
+      id: 1,
+      type: "ingreesse",
+      amount: 12.12,
+      date: Date.now() - 4593867349,
+      categoryId: 1
+    },
+    4: {
+      id: 2,
+      type: "ingreesse",
+      amount: 34,
+      date: Date.now() - 567667472,
+      categoryId: 1
+    },
+    5: {
+      id: 3,
+      type: "withdraw",
+      amount: 8,
+      date: Date.now() - 234565234,
+      categoryId: 3
+    },
+    6: {
+      id: 4,
+      type: "ingreesse",
+      amount: 1.8,
+      date: Date.now() - 8786766,
       categoryId: 1
     }
   },
